@@ -31,7 +31,7 @@ public class MemberController {
 		return "redirect:member_list.me";
 	}
 	
-//	//전체보기
+//	//전체보기 (ModelAndView  이용방법)
 //	@RequestMapping("member_list.me")
 //	public ModelAndView list() {
 //		ModelAndView mv = new ModelAndView();
@@ -42,7 +42,7 @@ public class MemberController {
 //		return mv;
 //		
 //	}
-	//전체보기
+	//전체보기(model 이용방법)
 	@RequestMapping("member_list.me")
 	public String list(Model model) {
 		List<MemberDTO> memberlist = dao.getMemberList();

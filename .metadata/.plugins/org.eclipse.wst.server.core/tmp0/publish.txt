@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Tue Oct 06 16:07:46 KST 2020
+#Tue Oct 06 16:27:05 KST 2020
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\admin\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\01_SpringTest\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\admin\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\02_SpringTest\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\admin\\Documents\\workspace-spring-tool-suite-4-4.8.0.RELEASE\\03_MemberTest\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
