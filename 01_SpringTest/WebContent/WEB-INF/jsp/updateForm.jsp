@@ -10,7 +10,7 @@
 <body>
 
 <h2>개인 정보 수정</h2>
-<form action="personUpdate.sp" method="post">
+<form action="update.go" method="post">
 <input type="hidden" name="id" value="${user.id}">
 
 <table>
