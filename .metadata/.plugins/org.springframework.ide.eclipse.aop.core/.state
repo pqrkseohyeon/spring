@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="FirstSpring"/>
+<aop-project name="02_SpringTest"/>
+<aop-project name="03_MemberTest"/>
 <aop-project name="01_SpringTest"/>
 </aop-reference-model>
