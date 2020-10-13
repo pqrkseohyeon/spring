@@ -223,7 +223,7 @@
     <!--
     <Manager pathname="" />
     -->
-</Context></Host>
+</Context><Context docBase="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\05_MemberMaven" path="/mymember" reloadable="true" source="org.eclipse.jst.jee.server:05_MemberMaven"/><Context docBase="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\06_MemberMavenMybatis" path="/mytest" reloadable="true" source="org.eclipse.jst.jee.server:06_MemberMavenMybatis"/></Host>
     </Engine>
   </Service>
 </Server>
