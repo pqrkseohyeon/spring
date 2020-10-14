@@ -10,6 +10,7 @@
 <h3>상세보기</h3>
 이름 : ${user.name }<br/>
 아이디 :${user.id }<br/>
+비밀번호 :${user.pass}<br/>
 주소 : ${user.addr }<br/>
 메모 : ${user.memo }<br/>
 날짜 : ${user.reg_date }<br/><br/>

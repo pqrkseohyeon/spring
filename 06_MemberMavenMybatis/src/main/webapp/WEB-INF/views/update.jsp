@@ -24,6 +24,7 @@
 
 메모 : <input type="text" name="memo" value="${user.memo }"><br/>
 
+
 <br><br>
 <input type="submit" value="확인">
 <input type="reset"  value="취소">

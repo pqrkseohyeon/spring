@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO{
+	
 	@Autowired
 	private SqlSessionFactory sqlMapper;
 	
@@ -29,21 +30,30 @@ public class MemberDAOImpl implements MemberDAO{
 		return sess.selectList(sql_Id);
 	}
 
+	//상세보기
 	@Override
 	public MemberVO dao_view(String sql_Id, String id) {
-		// TODO Auto-generated method stub
-		return null;
+		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);
+		return sess.selectOne(sql_Id,id);
 	}
 
+	//수정하기
 	@Override
 	public void dao_update(String sql_Id, MemberVO member) {
-		// TODO Auto-generated method stub
+		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);
+		sess.update(sql_Id, member);
+		sess.commit();
+		
+		
 		
 	}
 
+	//삭제하기
 	@Override
 	public void dao_delete(String sql_Id, String id) {
-		// TODO Auto-generated method stub
+		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);
+		sess.delete(sql_Id,id);
+		sess.commit();
 		
 	}
 

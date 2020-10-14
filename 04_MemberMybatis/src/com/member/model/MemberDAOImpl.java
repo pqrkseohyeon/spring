@@ -24,6 +24,7 @@ public class MemberDAOImpl implements MemberDAO{
 		
 	}
 
+	//전체보기
 	@Override
 	public List<MemberVO> dao_list(String sql_Id) {
 		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);
@@ -31,6 +32,7 @@ public class MemberDAOImpl implements MemberDAO{
 		return sess.selectList(sql_Id);
 	}
 
+	//상세보기
 	@Override
 	public MemberVO dao_view(String sql_Id, String id) {
 		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);

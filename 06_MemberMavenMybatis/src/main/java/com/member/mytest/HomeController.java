@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.member.model.MemberService;
 import com.member.model.MemberVO;
-import com.mycom.model.Member;
+
 
 /**
  * Handles requests for the application home page.

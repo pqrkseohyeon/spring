@@ -15,5 +15,18 @@ values(#{id},#{pass},#{name},#{addr},#{memo},sysdate)
 	select*from springmember
 </select>
 
+<!-- 상세보기-->
+<select id="viewData" resultType="com.member.model.MemberVO" parameterType="String">
+	select*from springmember where id=#{id}
+</select>
 
+<!-- 수정하기 -->
+<select id="updateData" parameterType="com.member.model.MemberVO">
+	update springmember set name=#{name},pass=#{pass},addr=#{addr},memo=#{memo} where id=#{id}
+
+</select>
+<!-- 삭제하기 -->
+<select id="deleteData" parameterType="String">
+	delete from springmember where id=#{id}
+</select>
 </mapper>
