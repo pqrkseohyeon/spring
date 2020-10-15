@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper     
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.person.07_Person">
+
+<!-- insert -->
+<insert id="insertData" parameterType="com.person.model.PersonDTO">
+insert into person (id,name,password,gender,job)
+values(#{id},#{name},#{password},#{gender},#{job})
+</insert>
+
+
+<!-- list -->
+<select id="listData" resultType="com.person.model.PersonDTO">
+	select*from person
+		<where>
+		<if test = 'word!=null and field=="name"'>
+			name like'%'||#{word}||'%'
+		</if>
+		<if test = 'word!=null and field=="id"'>
+			id like'%'||#{word}||'%'
+		</if>	
+	</where>
+</select>
+
+<!-- count -->
+<select id="countData" resultType="Integer">
+	select count(*) from person
+</select>
+
+
+<!-- 상세보기 -->
+<select id="viewData" resultType="com.person.model.PersonDTO" parameterType="String">
+	select*from person where id=#{id}
+</select>
+
+<!-- 수정하기 -->
+<select id="updateData" parameterType="com.person.model.PersonDTO">
+	update person set name=#{name}, password=#{password},gender=#{gender},job=#{job} where id=#{id}
+</select>
+
+<!-- 삭제하기 -->
+<select id="deleteData" parameterType="String">
+	delete from person where id=#{id}
+</select>
+</mapper>

@@ -13,6 +13,14 @@ values(#{id},#{pass},#{name},#{addr},#{memo},sysdate)
 <!-- list -->
 <select id="listData" resultType="com.member.model.MemberVO">
 	select*from springmember
+	<where>
+		<if test = 'word!=null and field=="name"'>
+			name like'%'||#{word}||'%'
+		</if>
+		<if test = 'word!=null and field=="addr"'>
+			addr like'%'||#{word}||'%'
+		</if>	
+	</where>
 </select>
 
 <!-- 상세보기-->

@@ -17,5 +17,19 @@
 날짜 : ${user.reg_date}<br/><br/>
 </c:forEach>
 
+
+<hr/>
+
+<br/>
+<form action="list">
+	<select name="field">
+		<option>선택하세요.</option>
+		<option value="name">이름</option>
+		<option value="addr">주소</option>
+	</select>
+	<input type="text" name="word">
+	<input type="submit" value="검색">
+</form>
+
 </body>
 </html>

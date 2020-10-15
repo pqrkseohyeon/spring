@@ -1,5 +1,6 @@
 package com.member.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +20,13 @@ public class MemberServiceDAOImpl implements MemberService {
 
 	//전체보기
 	@Override
-	public List<MemberVO> list() {
-		// TODO Auto-generated method stub
-		return mDao.dao_list("listData");
+	public List<MemberVO> list(HashMap<String, String> hm) {
+		return mDao.dao_list("listData",hm);
 	}
 
 	//상세보기
 	@Override
 	public MemberVO view(String id) {
-		// TODO Auto-generated method stub
 		return mDao.dao_view("viewData", id);
 	}
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycom.model.Member;
 import com.mycom.model.MemberService;
@@ -65,6 +66,12 @@ public class HomeController {
 		model.addAttribute("memberlist",memberlist);
 		return "memberList";
 	
+	}
+	
+	@RequestMapping("sample1")
+	@ResponseBody
+	public String sample() {
+		return "success";
 	}
 	
 	//상세보기, 수정폼
