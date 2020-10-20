@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="05_MemberMaven"/>
+<aop-project name="07_PersonMaven"/>
 <aop-project name="03_SpringTest"/>
+<aop-project name="08_GuestMaven"/>
 <aop-project name="04_MemberMybatis"/>
 <aop-project name="06_MemberMavenMybatis"/>
 <aop-project name="FirstSpring"/>

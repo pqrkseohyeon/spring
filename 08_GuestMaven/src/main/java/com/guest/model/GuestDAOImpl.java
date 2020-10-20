@@ -27,7 +27,7 @@ public class GuestDAOImpl implements GuestDAO {
 
 	@Override
 	public void dao_delete(int num) {
-		// TODO Auto-generated method stub
+		mapper.delete(num);
 		
 	}
 
@@ -39,13 +39,14 @@ public class GuestDAOImpl implements GuestDAO {
 	@Override
 	public GuestVO dao_findById(int num) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.view(num);
 	}
 
+	//전체 회원 수
 	@Override
 	public int dao_count(HashMap<String, Object> hm) {
 		// TODO Auto-generated method stub
-		return 0;
+		return mapper.count(hm);
 	}
 
 }

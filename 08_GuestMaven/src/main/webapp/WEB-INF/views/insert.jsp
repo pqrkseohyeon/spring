@@ -8,6 +8,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 $(function(){
+	//insert 실행할 때 list load 하기
+	getData(1,"","");
+	//insert
 	$("#submit").on("click",function(){
 		var name =$("#name").val();
 		var content = $("#content").val();
@@ -18,7 +21,7 @@ $(function(){
 			url:"gInsert",
 			data:postString,
 			success:function(resp){
-				alert(resp+"성공")
+			$("#listArea").html(resp);
 			},
 			error:function(e){
 				alert("error:"+e)
@@ -27,6 +30,39 @@ $(function(){
 		})
 })
 
+function getData(pageNum, field, word){
+	$.get("gList",
+			{"pageNum":pageNum,"field":field,"word":word},
+			function(resp){
+				$("#listArea").html(resp);
+				}
+			);//callback function
+}//function
+//상세보기
+function fview(num){
+	alert(num);
+	$.get("gView",{"num":num},function(resp){
+		//alert(resp);
+		resp = JSON.parse(resp);
+		var htmlStr="";
+		htmlStr += resp.name+"<br>";
+		htmlStr += resp.content+"<br>";
+		htmlStr += resp.grade+"<br>";
+		htmlStr += resp.created+"<br>";
+		htmlStr += resp.ipaddr+"<br>";
+		$("#viewArea").html(htmlStr);
+		})
+	
+}
+function fdelete(num, name){
+	if(confirm("["+name+"]의 게시글을 정말 삭제할까요?")){
+		$.get("gDelete?num="+num, 
+				function(resp){
+				$("#listArea").html(resp);
+			} //callback function
+		); //get
+	}//if
+}//function
 
 
 </script>
@@ -59,6 +95,7 @@ $(function(){
 <br/>
 <tr>
 	<td colspan="2">
+	<!-- type="button" id 속성 추가할 것 -->
  	<input type="button" value="입력" id="submit"> 
 </td>
 </tr>
@@ -83,5 +120,8 @@ $(function(){
 
 </div>
 
+<div id="listArea"></div>
+<hr>
+<div id="viewArea"></div>
 </body>
 </html>
