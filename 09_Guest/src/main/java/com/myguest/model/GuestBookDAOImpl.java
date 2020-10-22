@@ -16,7 +16,7 @@ public class GuestBookDAOImpl implements GuestBookDAO {
 	@Override
 	public int dao_guestInsert(GuestBookDTO gb) {
 		// TODO Auto-generated method stub
-		return 0;
+		return mapper.insert(gb);
 	}
 
 	@Override
@@ -27,8 +27,8 @@ public class GuestBookDAOImpl implements GuestBookDAO {
 
 	@Override
 	public GuestBookDTO dao_findByNum(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return mapper.findByNum(num);
 	}
 
 	@Override
@@ -40,6 +40,7 @@ public class GuestBookDAOImpl implements GuestBookDAO {
 	@Override
 	public void dao_deleteGuest(int num) {
 		// TODO Auto-generated method stub
+		mapper.delete(num);
 		
 	}
 

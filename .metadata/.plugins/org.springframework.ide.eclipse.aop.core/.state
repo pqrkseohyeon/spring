@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="09_Guest"/>
 <aop-project name="05_MemberMaven"/>
 <aop-project name="07_PersonMaven"/>
 <aop-project name="03_SpringTest"/>

@@ -14,7 +14,7 @@ public class GuestBookServiceImpl implements GuestBookService{
 	@Override
 	public int guestInsert(GuestBookDTO gb) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.dao_guestInsert(gb);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class GuestBookServiceImpl implements GuestBookService{
 	@Override
 	public GuestBookDTO findByNum(int num) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.dao_findByNum(num);
 	}
 
 	@Override
@@ -38,6 +38,7 @@ public class GuestBookServiceImpl implements GuestBookService{
 	@Override
 	public void deleteGuest(int num) {
 		// TODO Auto-generated method stub
+		dao.dao_deleteGuest(num);
 		
 	}
 

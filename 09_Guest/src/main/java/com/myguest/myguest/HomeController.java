@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +16,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.myguest.model.GuestBookDAOImpl;
@@ -43,6 +48,30 @@ public class HomeController {
 
 		
 		return "insert";
+	}
+	
+	//추가하기
+	@PostMapping("gInsert")
+	public String insert(HttpServletRequest req, GuestBookDTO guest) {
+		guest.setIpaddr(req.getRemoteAddr());
+		service.guestInsert(guest);
+		return "redirect:gList";
+	}
+	
+	//상세보기
+	@GetMapping("gView")
+	@ResponseBody
+	public GuestBookDTO view(int num) {
+		GuestBookDTO guest = service.findByNum(num);
+		return guest;
+	}
+	
+	//삭제하기
+	@GetMapping("gDelete")
+	@ResponseBody
+	public String delete(int num) {
+		service.deleteGuest(num);
+		return "success";
 	}
 	
 	//전체보기

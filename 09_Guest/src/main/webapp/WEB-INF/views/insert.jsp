@@ -38,10 +38,23 @@
 	<td colspan="2">
 	<!-- type="button" id 속성 추가할 것 -->
  	<input type="button" value="입력" id="submit"> 
-</td>
+	</td>
 </tr>
 </table>
 </form>
+<br/><hr/>
+<div  id="resultCount"></div>
+<div id="resultArea">
+<table border="1" align="center">
+	<thead></thead>
+	<tbody></tbody>
+</table>
+</div><br/>
+<div id="pageArea" align="center"></div>
+
+<br/><hr/>
+<div id="viewArea"></div>
+
 
 </body>
 </html>

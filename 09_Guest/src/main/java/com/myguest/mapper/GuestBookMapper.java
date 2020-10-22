@@ -7,7 +7,7 @@ import com.myguest.model.GuestBookDTO;
 
 public interface GuestBookMapper {
 	//추가
-	public void insert(GuestBookDTO gb);
+	public int insert(GuestBookDTO gb);
 	//전체보기
 	public List<GuestBookDTO> list(HashMap<String, Object>hm);
 	//수정
