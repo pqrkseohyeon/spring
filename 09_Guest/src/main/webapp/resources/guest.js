@@ -4,10 +4,9 @@ $(function(){
 
 //템플릿
 function createHtmlStr(item){
-	return
-		` <tr>
+	return` <tr>
 			<td>${item.num}</td>
-			<td><a href="javascript:fview(${item.num})"${item.name}</a></td>
+			<td><a href="javascript:fview(${item.num})">${item.name}</a></td>
 			<td>${item.grade}</td>
 			<td>${item.created}</td>
 			<td><a href="javascript:fdelete(${item.num})">삭제</a></td>
@@ -33,6 +32,7 @@ function getData(pageNum, field, word){
 			htmlTitle+="</tr></thead>";
 			
 		$("#resultArea thead").html(htmlTitle);// 테이블 타이틀
+		
 		var container = document.querySelector("#resultArea tbody");
 		container.innerHTML=resp.list.map(item=>createHtmlStr(item)).join('').replace(/null/gi,"");
 
@@ -46,7 +46,7 @@ function fview(num){
 	$.get("gView",
 		{"num":num},
 		function(resp){
-			resp = JSON.parse(resp);
+			//resp = JSON.parse(resp);
 			var htmlStr="";
 			htmlStr+=resp.name+"<br>";
 			htmlStr+=resp.grade+"<br>";

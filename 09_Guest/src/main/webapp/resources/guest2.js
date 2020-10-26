@@ -27,7 +27,7 @@ function getData(pageNum, field, word){
 			htmlCont+=
 			` <tr>
 				<td>${val.num}</td>
-				<td><a href="javascript:fview(${val.num})"${val.name}</a></td>
+				<td><a href="javascript:fview(${val.num})">${val.name}</a></td>
 				<td>${val.grade}</td>
 				<td>${val.created}</td>
 				<td><a href="javascript:fdelete(${val.num})">삭제</a></td>
@@ -62,14 +62,14 @@ function fview(num){
 	$.get("gView",
 		{"num":num},
 		function(resp){
-			resp = JSON.parse(resp);
+			//resp = JSON.parse(resp);
 			var htmlStr="";
 			htmlStr+=resp.name+"<br>";
 			htmlStr+=resp.grade+"<br>";
 			htmlStr+=resp.content+"<br>";
 			htmlStr+=resp.created+"<br>";
 			htmlStr+=resp.ipaddr+"<br>";
-			$("#detailArea").html(htmlStr);
+			$("#viewArea").html(htmlStr);
 			}
 		);
 }

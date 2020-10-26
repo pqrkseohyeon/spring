@@ -53,7 +53,7 @@
 <div id="pageArea" align="center"></div>
 
 <br/><hr/>
-<div id="viewArea"></div>
+<div id="viewArea" align="center"></div>
 
 
 </body>
