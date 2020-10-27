@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 
 import com.myboard.dto.BoardDTO;
+import com.myboard.util.SearchDTO;
 
 public interface BoardMapper {
 	@Insert("insert into springboard values(springboard_seq.nextval, #{title}, #{content}, #{writer}, sysdate, 0, #{password})")
@@ -13,6 +14,7 @@ public interface BoardMapper {
 	public int insert(BoardDTO board);
 	//전체보기
 	public List<BoardDTO> findAll(HashMap<String, Object> hm);
+	public List<BoardDTO> findAlls(SearchDTO dto);
 	//상세보기
 	public BoardDTO findByNum(int num);
 	//수정
@@ -20,5 +22,5 @@ public interface BoardMapper {
 	//삭제
 	public void delete(int num);
 	//개수
-	public int count(HashMap<String, Object> hm);
+	public int getCount(SearchDTO sdto);
 }

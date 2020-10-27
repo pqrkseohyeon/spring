@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.myboard.dto.BoardDTO;
 import com.myboard.mapper.BoardMapper;
+import com.myboard.util.SearchDTO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO{
@@ -18,11 +19,11 @@ public class BoardDAOImpl implements BoardDAO{
 	public int dao_insert(BoardDTO board) {
 		return mapper.insert(board);
 	}
-
-	@Override
-	public List<BoardDTO> dao_findAll(HashMap<String, Object> hm) {
-		return mapper.findAll(hm);
-	}
+//
+//	@Override
+//	public List<BoardDTO> dao_findAll(HashMap<String, Object> hm) {
+//		return mapper.findAll(hm);
+//	}
 
 	@Override
 	public BoardDTO dao_findByNum(int num) {
@@ -39,8 +40,22 @@ public class BoardDAOImpl implements BoardDAO{
 		mapper.delete(num);
 	}
 
+
+
 	@Override
-	public int dao_count(HashMap<String, Object> hm) {
-		return mapper.count(hm);
+	public List<BoardDTO> dao_findAll(SearchDTO dto) {
+		// TODO Auto-generated method stub
+		return mapper.findAlls(dto);
+	}
+
+	@Override
+	public List<BoardDTO> dao_findAll(HashMap<String, Object> hm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public int dao_getCount(SearchDTO sdto) {
+		// TODO Auto-generated method stub
+		return mapper.getCount(sdto);
 	}
 }

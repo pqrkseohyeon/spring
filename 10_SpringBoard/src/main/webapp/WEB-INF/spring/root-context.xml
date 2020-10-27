@@ -24,10 +24,10 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<!-- Configuration.xml 대신에 GuestMapper.java 사용 -->
+	<!--mybatis-scan-->
 	<mybatis-spring:scan base-package="com.myboard.mapper"/>	
 	
-	<!-- Controller는 빼고 bean객체에 등록시키기 -->
+	
 	<context:component-scan base-package="com.myboard">
 	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
