@@ -11,6 +11,8 @@ public interface CommentService {
 	public List<CommentDTO> getList(int num);
 	//수정
 	//삭제
+	public void del(int cnum);
 	//리스트
+	
 
 }

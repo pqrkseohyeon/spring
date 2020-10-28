@@ -13,4 +13,10 @@ select*from commentspringboard where bnum=#{bnum}
 insert into commentspringboard
 values(commentspringboard_seq.nextval,'aa',#{content},sysdate,#{bnum})
 </insert>
+
+<!-- 댓글 삭제 -->
+<delete id="del" parameterType="Integer">
+	delete from commentspringboard where cnum=#{cnum}
+
+</delete>
  </mapper>

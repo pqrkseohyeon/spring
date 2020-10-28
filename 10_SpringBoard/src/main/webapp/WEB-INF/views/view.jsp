@@ -43,6 +43,8 @@
 <div id="area"></div>
 <div id="commentResult"></div>
 <script>
+
+//댓글 리스트
 var init=function(){
 	$.ajax({
 		type:"get",
@@ -54,15 +56,25 @@ var init=function(){
 			var htmlCont=""; //테이블 내용
 			$.each(resp,function(key,val){
 				htmlCont+=val.content+"<br>";
+				htmlCont+=val.regdate+"<br>";
+				htmlCont+="<a href='javascript:fdel("+val.cnum+")'>삭제</a><hr>";
+			/* $.each(resp,function(key,val){
+				htmlCont+="<li data-cnum=>"+val.cnum+"</li>";
+				htmlCont+"<div class='commentArea'>"
+				htmlCont+=val.content+"<br>";
 				htmlCont+=val.regdate+"<hr>";
-	
-					$("#area").html(htmlCont);//테이블 내용
+				htmlCont+="<a>삭제</a><hr>";
+				htmlCont+"</div>"*/
+			
 				})
+				$("#area").html(htmlCont);//테이블 내용
 		})
 		.fail(function(error){
 			alert("실패");
 		})
 }
+
+//댓글추가
 $("#commentBtn").on("click",function(){
 	var data={
 		bnum:$("#num").val(),
@@ -84,10 +96,38 @@ $("#commentBtn").on("click",function(){
 		.fail(function(error){
 			alert("등록 실패");
 		})
-})
-
-
+	})
 init();
+
+//삭제하기
+function fdelete(cnum){
+	$.get("reply/delete",{"cnum":cnum},function(resp){
+		if(resp=="success"){
+			alert("삭제성공");
+			init();
+			}
+		});
+	}
+
+//삭제하기 다른 방법
+function fdel(cnum){
+	$.ajax({
+		type:'DELETE',
+		url:"/board/reply/del/"+cnum,
+
+		contentType:'application/json;charset=utf-8',
+		})
+		.done(function(resp){
+			alert(resp+"글 삭제");
+			init();
+		})
+		.fail(function(error){
+			alert("글 삭제 실패");
+
+			})			
+	}
+
+
 </script>
 </body>
 </html>

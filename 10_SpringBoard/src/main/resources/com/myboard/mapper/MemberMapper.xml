@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.myboard.mapper.MemberMapper">
+<!-- join -->
+<insert id="join" parameterType="com.myboard.model.MemberVO">
+insert into springmember (id,pass,name,addr,memo,reg_date)
+values(#{id},#{pass},#{name},#{addr},#{memo},sysdate)
+</insert>
+ </mapper>
