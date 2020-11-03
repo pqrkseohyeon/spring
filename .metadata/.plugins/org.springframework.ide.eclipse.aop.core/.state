@@ -4,13 +4,20 @@
 <aop-project name="09_Guest"/>
 <aop-project name="03_SpringTest"/>
 <aop-project name="08_GuestMaven"/>
+<aop-project name="11_SpringSecurity11"/>
 <aop-project name="01_SpringTest"/>
 <aop-project name="demo"/>
 <aop-project name="05_MemberMaven"/>
 <aop-project name="07_PersonMaven"/>
+<aop-project name="10_SpringBoard7">
+<aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="34" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#10_SpringBoard7#src/main/webapp/WEB-INF/spring/root-context.xml#34" aspect-start-line-number="34" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/10_SpringBoard7/src/main/webapp/WEB-INF/spring/root-context.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:10_SpringBoard7|3:src/main/webapp/WEB-INF/spring/root-context.xml|7:beans:10|8:commentServiceImpl:10" bean-file="/10_SpringBoard7/src/main/webapp/WEB-INF/spring/root-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/10_SpringBoard7/src/main/webapp/WEB-INF/spring/root-context.xml" source="=11_SpringSecurity/C:\/Users\/admin\/.m2\/repository\/org\/springframework\/spring-tx\/5.2.9.RELEASE\/spring-tx-5.2.9.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=10_SpringBoard7/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.myboard.model{CommentServiceImpl.java[CommentServiceImpl~delete~I" target-start-line="36"/>
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:10_SpringBoard7|3:src/main/webapp/WEB-INF/spring/root-context.xml|7:beans:10|8:commentServiceImpl:10" bean-file="/10_SpringBoard7/src/main/webapp/WEB-INF/spring/root-context.xml" bean-start-line="10" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/10_SpringBoard7/src/main/webapp/WEB-INF/spring/root-context.xml" source="=11_SpringSecurity/C:\/Users\/admin\/.m2\/repository\/org\/springframework\/spring-tx\/5.2.9.RELEASE\/spring-tx-5.2.9.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=10_SpringBoard7/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.myboard.model{CommentServiceImpl.java[CommentServiceImpl~insert~QCommentDTO;" target-start-line="29"/>
+</aspect-definition>
+</aop-project>
 <aop-project name="04_MemberMybatis"/>
 <aop-project name="06_MemberMavenMybatis"/>
-<aop-project name="FirstSpring"/>
 <aop-project name="02_SpringTest"/>
+<aop-project name="FirstSpring"/>
 <aop-project name="03_MemberTest"/>
 </aop-reference-model>
