@@ -8,7 +8,7 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>/sample/home page</h1>
+<h1>/sample/Home page</h1>
 <sec:authorize access="isAnonymous()">
   <a href="/security11/customLogin">로그인</a>
   <a href="/security11/board/insert">게시판 글쓰기</a>

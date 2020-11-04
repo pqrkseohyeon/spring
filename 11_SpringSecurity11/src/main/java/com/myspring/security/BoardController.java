@@ -1,5 +1,6 @@
 package com.myspring.security;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class BoardController {
 	
 	@GetMapping("/insert")
 	@PreAuthorize("isAuthenticated()")//권한 검사
-	public void register() {
+	public void register(Principal p) {
 		
 	}
 	
