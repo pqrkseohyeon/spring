@@ -9,5 +9,6 @@
 <body>
 home<br/>
 <a href="mInsert">추가</a>
+<a href="list">리스트</a>
 </body>
 </html>

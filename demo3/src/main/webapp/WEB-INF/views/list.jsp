@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-     <c:forEach items="${list}" var="member">    
+     <c:forEach items="${list.content}" var="member">    
       <tr>
       	<td>${member.id}</td>
         <td>${member.name}</td>
@@ -35,7 +35,31 @@
         <td><a href="${member.id}">상세보기</a></td>
       </tr>
      </c:forEach> 
+
     </tbody>
   </table>
-</body>
+  
+  <a class="page-link" href="?page=${list.number-1}" align="center">이전</a>
+  <a class="page-link" href="?page=${list.number+1}" align="center">다음</a>
+  
+<%--   <c:choose>
+  <c:when test="${list.first}">
+  	<a class="page-link" href="?page=${list.number-1}">이전</a>
+  </c:when>
+  <c:otherwise>
+  	<a class="page-link" href="?page=${list.number-1}">이전</a>
+  </c:otherwise>
+  </c:choose>
+  
+    <c:choose>
+  <c:when test="${list.last}">
+  	<a class="page-link" href="?page=${list.number+1}">다음</a>
+  </c:when>
+  <c:otherwise>
+  	<a class="page-link" href="?page=${list.number+1}">다음</a>
+  </c:otherwise>
+  </c:choose> --%>
+  </div>
+  
+  </body>
 </html>

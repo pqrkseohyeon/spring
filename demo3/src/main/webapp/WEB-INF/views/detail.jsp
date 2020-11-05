@@ -10,12 +10,14 @@
 </head>
 <body>
 <h1>상세보기</h1>
+<form >
 번호 : <span id="id">${member.id}</span><br/>
 이름 : ${member.name}<br/>
 주소 : ${member.addr }<br/><br/>
 <%-- <a href="${member.id}">삭제하기</a> --%>
 <button id="btnDelete">삭제</button>
-
+<a href="${member.id}/update">수정</a>
+</form>
 <script src="/js/member1.js"></script>
 </body>
 </html>
