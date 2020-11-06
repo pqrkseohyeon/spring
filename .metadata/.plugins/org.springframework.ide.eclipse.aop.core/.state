@@ -2,9 +2,9 @@
 <aop-reference-model>
 <aop-project name="10_SpringBoard"/>
 <aop-project name="09_Guest"/>
-<aop-project name="03_SpringTest"/>
-<aop-project name="08_GuestMaven"/>
 <aop-project name="Guest"/>
+<aop-project name="08_GuestMaven"/>
+<aop-project name="03_SpringTest"/>
 <aop-project name="11_SpringSecurity11"/>
 <aop-project name="01_SpringTest"/>
 <aop-project name="demo"/>
