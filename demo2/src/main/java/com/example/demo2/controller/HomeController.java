@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo2.model.Board;
 import com.example.demo2.model.User;
 import com.example.demo2.repository.UserRepository;
 import com.example.demo2.service.BoardService;
@@ -24,7 +25,8 @@ import com.example.demo2.service.UserService;
 public class HomeController {
 	@Autowired
 	private UserService userService;
-	@GetMapping("/")
+	
+	@GetMapping("/home")
 	public String index() {
 		return "home";
 	}
@@ -34,10 +36,10 @@ public class HomeController {
 	public String uLogin() {
 		return "login";
 	}
-	//추가폼
+	//회원 추가폼
 	@GetMapping("uInsert")
 	public String bInsert() {
-		return "insert";
+		return "join";
 	}
 	
 	//회원추가
@@ -57,21 +59,21 @@ public class HomeController {
 		return "list";
 	}
 	
-	//상세보기
+	//회원 상세보기
 	@GetMapping("{id}")
 	public String findById(@PathVariable Long id, Model model) {
 		model.addAttribute("user",userService.detail(id));
 		return "detail";
 	}
 	
-	//수정폼
+	// 회원 수정폼
 	@GetMapping("{id}/update")
 	public String update(@PathVariable Long id, Model model) {
 		model.addAttribute("user",userService.detail(id));
 		return "update";
 	}
 	
-	//수정하기
+	//회원 수정하기
 	@PutMapping("update/{id}")
 	@ResponseBody
 	public String update(@PathVariable Long id, @RequestBody User user) {
@@ -79,13 +81,16 @@ public class HomeController {
 		return id.toString();
 	}
 	
-	//삭제하기
+	//회원 삭제하기
 	@DeleteMapping("{id}")
 	@ResponseBody
 	public String delete(@PathVariable Long id) {
 		userService.delete(id);
 		return id.toString();
 	}
+	
+
+
 	
 	
 

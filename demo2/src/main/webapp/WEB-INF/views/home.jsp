@@ -8,7 +8,7 @@
 </head>
 <%@ include file="/resources/header.jsp" %>
 <body>
-
+home
 
 </body>
 </html>

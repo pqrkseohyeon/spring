@@ -13,6 +13,7 @@
     <span id="idcheck"></span>
   </div>
   
+  
   <div class="form-group">
     <label for="pass">비밀번호:</label>
     <input type="text"  id="pass" name="pass" class="form-control">

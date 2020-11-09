@@ -25,7 +25,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Board</a>
+  <a class="navbar-brand" href="home">Board</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -41,7 +41,7 @@
         <a class="nav-link" href="list">회원 리스트</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="board">게시판</a>
+        <a class="nav-link" href="boardInsert">게시판</a>
       </li>     
   
     </ul>

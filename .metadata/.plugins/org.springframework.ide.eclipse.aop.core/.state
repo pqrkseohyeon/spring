@@ -6,6 +6,7 @@
 <aop-project name="08_GuestMaven"/>
 <aop-project name="03_SpringTest"/>
 <aop-project name="11_SpringSecurity11"/>
+<aop-project name="demo2"/>
 <aop-project name="01_SpringTest"/>
 <aop-project name="demo"/>
 <aop-project name="05_MemberMaven"/>
@@ -18,6 +19,7 @@
 </aop-project>
 <aop-project name="04_MemberMybatis"/>
 <aop-project name="06_MemberMavenMybatis"/>
+<aop-project name="FirstMySql"/>
 <aop-project name="02_SpringTest"/>
 <aop-project name="FirstSpring"/>
 <aop-project name="03_MemberTest"/>
