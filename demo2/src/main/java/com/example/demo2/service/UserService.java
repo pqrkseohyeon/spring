@@ -35,28 +35,29 @@ public class UserService {
 	}
 	
 	//상세보기
-	public User detail(Long id) {
-		return userRepository.findById(id)
+	public User detail(Long unum) {
+		return userRepository.findById(unum)
 				.orElseThrow(() -> {
-					return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
+					return new IllegalArgumentException("회원 정보 불러오기 실패!");
 				});
 	}
 	
 	//수정하기
 	@Transactional
 	public void update(User user) {
-		User u = userRepository.findById(user.getId())
+		User u = userRepository.findById(user.getUnum())
 		.orElseThrow(()->{
-				return new IllegalArgumentException("찾기 실패: 아이디 없음");
+				return new IllegalArgumentException("수정실패");
 		});
 		u.setAddr(user.getAddr());
 		u.setName(user.getName());
+		u.setPassword(user.getPassword());
 	}
 	
 	//삭제하기
 	@Transactional
-	public void delete(Long id) {
-		userRepository.deleteById(id);
+	public void delete(Long unum) {
+		userRepository.deleteById(unum);
 	}
 
 }

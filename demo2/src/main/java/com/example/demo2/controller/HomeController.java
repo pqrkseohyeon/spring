@@ -26,7 +26,7 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String index() {
 		return "home";
 	}
@@ -38,11 +38,11 @@ public class HomeController {
 	}
 	//회원 추가폼
 	@GetMapping("uInsert")
-	public String bInsert() {
-		return "join";
+	public String uInsert() {
+		return "uInsert";
 	}
 	
-	//회원추가
+	//회원가입
 	@PostMapping("uInsert")
 	public String uInsert(User user) {
 		userService.save(user);
@@ -52,46 +52,37 @@ public class HomeController {
 	//회원 전체보기(페이지 포함)
 	@GetMapping("list")
 	public String list(Model model,
-			@PageableDefault(size=3,sort="id",
+			@PageableDefault(size=3,sort="unum",
 			direction = Sort.Direction.DESC) Pageable pageable) {
 		Page<User> ulist = userService.list(pageable);
 		model.addAttribute("list",ulist);
-		return "list";
+		return "uList";
 	}
 	
-	//회원 상세보기
-	@GetMapping("{id}")
-	public String findById(@PathVariable Long id, Model model) {
-		model.addAttribute("user",userService.detail(id));
-		return "detail";
+	//회원 상세보기 폼
+	@GetMapping("{unum}")
+	public String findByNum(@PathVariable Long unum, Model model) {
+		model.addAttribute("user",userService.detail(unum));
+		return "uDetail";
 	}
 	
-	// 회원 수정폼
-	@GetMapping("{id}/update")
-	public String update(@PathVariable Long id, Model model) {
-		model.addAttribute("user",userService.detail(id));
-		return "update";
-	}
 	
 	//회원 수정하기
-	@PutMapping("update/{id}")
+	@PutMapping("update/{unum}")
 	@ResponseBody
-	public String update(@PathVariable Long id, @RequestBody User user) {
+	public String update(@PathVariable Long unum, @RequestBody User user) {
 		userService.update(user);
-		return id.toString();
+		String idStr = user.getUserid().toString();
+		return idStr;
 	}
 	
 	//회원 삭제하기
-	@DeleteMapping("{id}")
+	@DeleteMapping("delete/{unum}")
 	@ResponseBody
-	public String delete(@PathVariable Long id) {
-		userService.delete(id);
-		return id.toString();
+	public String delete(@PathVariable Long unum, @RequestBody User user) {
+		userService.delete(unum);
+		String idStr = user.getUserid().toString();
+		return idStr;
 	}
 	
-
-
-	
-	
-
 }

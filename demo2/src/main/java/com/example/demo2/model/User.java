@@ -12,11 +12,10 @@ import lombok.Data;
 @Entity
 public class User {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long unum;
+	private String userid;
+	private String password;
 	private String name;
-	@Column(name = "password")
-	private String pwd;
-	@Column(name = "address")
 	private String addr;
 	private String email;
 	private String phone;

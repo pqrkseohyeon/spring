@@ -7,42 +7,68 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo2.model.Board;
 import com.example.demo2.service.BoardService;
 
-@RequestMapping("/board")
 @Controller
 public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	// 게시글 등록하기 폼
+	// 추가폼
 	@GetMapping("boardInsert")
 	public String boardInsert() {
-		return "board";
+		return "bInsert";
 	}
 	
-	//게시글 등록하기
+	//게시글 추가하기
 	@PostMapping("boardInsert")
 	public String boardInsert(Board board) {
-		boardService.save(board);
-		return "board";
+		boardService.boardSave(board);
+		return "redirect:boardList";
 	}
 	
-	//게시글 목록보기
+	//글목록
 	@GetMapping("boardList")
 	public String boardList(Model model,
-			@PageableDefault(size=3,sort="id",
+			@PageableDefault(size=3,sort="num",
 			direction = Sort.Direction.DESC) Pageable pageable) {
-		Page<Board> blist = boardService.list(pageable);
-		model.addAttribute("list",blist);
-		return "list";
+		Page<Board> blist = boardService.boardList(pageable);
+		model.addAttribute("blist",blist);
+		return "bList";
 	}
 	
+	//글 상세보기
+	@GetMapping("view/{num}")
+	public String boardView(@PathVariable Long num, Model model) {
+		model.addAttribute("board", boardService.boardView(num));
+		return "bView";
+	}
+	
+	//글 수정하기
+	@PutMapping("view/{num}/update")
+	@ResponseBody
+	public String update(@PathVariable Long num, @RequestBody Board board) {
+		boardService.boardUpdate(board);
+		return num.toString();
+	}
+	
+	//글 삭제하기
+	@DeleteMapping("view/{num}/delete")
+	@ResponseBody
+	public String delete(@PathVariable Long num) {
+		boardService.boardDelete(num);
+		return num.toString();
+	}
 
 	
 	

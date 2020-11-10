@@ -83,6 +83,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\admin\Downloads\CGV_Clone-master"/>
+			<item value="C:\Users\admin\Documents\demo6"/>
 			<item value="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\10_SpringBoard7"/>
 			<item value="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\10_SpringBoard5"/>
 			<item value="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\10_SpringBoard3"/>
@@ -92,6 +94,7 @@
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
+			<item value="C:\Users\admin\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\demo2\src\main\webapp\WEB-INF\views\update.jsp"/>
 		</list>
 	</section>
 	<section name="CleanDialogSettings">

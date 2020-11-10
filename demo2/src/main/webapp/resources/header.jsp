@@ -32,17 +32,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item"  >
-        <a class="nav-link" href="uLogin">로그인</a>
+        <a class="nav-link" href="/uLogin">로그인</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="uInsert">회원가입</a>
+        <a class="nav-link" href="/uInsert">회원가입</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="list">회원 리스트</a>
+        <a class="nav-link" href="/boardInsert">글쓰기</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="boardInsert">게시판</a>
-      </li>     
+        <a class="nav-link" href="/boardList">글목록</a>
+      </li>       
   
     </ul>
   </div>  
