@@ -54,6 +54,7 @@ public class BoardController {
 		return "bView";
 	}
 	
+	
 	//글 수정하기
 	@PutMapping("view/{num}/update")
 	@ResponseBody
